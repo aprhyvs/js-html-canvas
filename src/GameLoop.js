@@ -23,6 +23,7 @@ export class GameLoop {
 
         //fixed time step updates
         while (this.accumulatedTime >= this.timeStep) {
+            console.log("UPDATE!") 
             this.update(this.timeStep); //here passes the fixed time step
             this.accumulatedTime -= this.timeStep;
         }
@@ -31,5 +32,19 @@ export class GameLoop {
         this.render()
 
         this.requestAnimationFrameId = requestAnimationFrame(this.mainLoop);
+    }
+
+    start() {
+        if (!this.isRunning){
+            this.isRunning = true;
+            this.requestAnimationFrameId = requestAnimationFrame(this.mainLoop);
+        }
+    }
+
+    stop() {
+        if (this.requestAnimationFrameId){
+            cancelAnimationFrame(this.requestAnimationFrameId);
+        }
+        this.isRunning = false;
     }
 }

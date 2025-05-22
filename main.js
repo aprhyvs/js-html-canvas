@@ -1,4 +1,5 @@
 // import './style.css' - for vite bundler / does not work in vanilla js
+import { GameLoop } from "/src/GameLoop.js";
 import { resources } from "/src/Resource.js";
 import { Sprite } from "/src/Sprite.js";
 import { Vector2 } from "/src/Vector2.js";
@@ -31,6 +32,12 @@ const shadow = new Sprite({
 
 const heroPos = new Vector2(16 * 6, 16 * 5);
 
+const update = () => {
+    //updating entities in the game
+    hero.frame += 1;
+    
+};
+
 const draw = () => {
     skySprite.drawImage(ctx, 0, 0);
     groundSprite.drawImage(ctx, 0, 0);
@@ -44,8 +51,5 @@ const draw = () => {
     hero.drawImage(ctx, heroPosX, heroPosY);
 }
 
-//replace
-setInterval(() => {
-    hero.frame += 1;
-    draw() 
-}, 300)
+const gameLoop = new GameLoop(update, draw)
+gameLoop.start()
