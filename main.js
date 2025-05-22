@@ -1,4 +1,4 @@
-// import './style.css' - for vite bundler / does not work in vanilla js
+import { Input, UP, DOWN, LEFT, RIGHT } from "/src/Input.js";
 import { GameLoop } from "/src/GameLoop.js";
 import { resources } from "/src/Resource.js";
 import { Sprite } from "/src/Sprite.js";
@@ -31,11 +31,25 @@ const shadow = new Sprite({
 })
 
 const heroPos = new Vector2(16 * 6, 16 * 5);
+const input = new Input();
 
 const update = () => {
-    //updating entities in the game
-    hero.frame += 1;
-    
+    if (input.direction === DOWN){
+        heroPos.y += 1;
+        hero.frame = 0;
+    }
+    if (input.direction === UP){
+        heroPos.y -= 1;
+        hero.frame = 6;
+    }
+    if (input.direction === LEFT){
+        heroPos.x -= 1;
+        hero.frame = 9;
+    }
+    if (input.direction === RIGHT){
+        heroPos.x += 1;
+        hero.frame = 5;
+    }
 };
 
 const draw = () => {

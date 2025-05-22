@@ -23,7 +23,6 @@ export class GameLoop {
 
         //fixed time step updates
         while (this.accumulatedTime >= this.timeStep) {
-            console.log("UPDATE!") 
             this.update(this.timeStep); //here passes the fixed time step
             this.accumulatedTime -= this.timeStep;
         }
