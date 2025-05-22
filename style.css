@@ -1,0 +1,11 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* prevent scrollbars x-y */
+    image-rendering: pixelated; /* best for pixel art */
+}
+
+canvas {
+    width: 100%;
+    background-color: rgb(102, 132, 156);
+}
