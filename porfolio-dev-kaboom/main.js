@@ -1,13 +1,13 @@
-k.loadSprite("spritesheet", "./public/spritesheet.png", {
-  sliceX: 39,
-  sliceY: 31,
+k.loadSprite("spritesheet", "./public/boy_run.png", {
+  sliceX: 4,
+  sliceY: 4,
   anims: {
-    "idle-down": 936,
-    "walk-down": { from: 936, to: 939, loop: true, speed: 8 },
-    "idle-side": 975,
-    "walk-side": { from: 975, to: 978, loop: true, speed: 8 },
-    "idle-up": 1014,
-    "walk-up": { from: 1014, to: 1017, loop: true, speed: 8 },
+    "idle-down": 0 ,
+    "walk-down": { from: 0, to: 3, loop: true, speed: 8 },
+    "idle-side": 8,
+    "walk-side": { from: 8, to: 11, loop: true, speed: 8 },
+    "idle-up": 12,
+    "walk-up": { from: 12, to: 15, loop: true, speed: 8 },
   },
 });
 
@@ -31,7 +31,7 @@ k.scene("main", async () => {
     k.pos(),
     k.scale(scaleFactor),
     {
-      speed: 250,
+      speed: 200,
       direction: "down",
       isInDialogue: false,
     },
