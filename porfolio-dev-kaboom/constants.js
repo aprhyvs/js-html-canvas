@@ -1,4 +1,4 @@
-window.scaleFactor = 1.5;
+window.scaleFactor = 1.25;
 
 window.dialogueData = {
   pc: `This is my PC. I work mostly in JavaScript/TypeScript these days.

@@ -1,4 +1,4 @@
-k.loadSprite("spritesheet", "./public/boy_run.png", {
+k.loadSprite("spritesheet", "./public/player.png", {
   sliceX: 4,
   sliceY: 4,
   anims: {
